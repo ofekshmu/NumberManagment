@@ -1,0 +1,25 @@
+# Ignore object files
+*.o
+*.obj
+
+# Ignore binary files
+*.exe
+*.out
+*.app
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore directories
+obj/
+bin/
+
+# Ignore build files
+Makefile
+makefile
+*.make
+
+# Ignore Visual Studio files
+*.vcxproj
+*.sln
