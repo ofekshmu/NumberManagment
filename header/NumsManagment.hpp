@@ -3,19 +3,31 @@
 
 // Include any necessary standard or third-party libraries
 #include <string>
+#include <generator>
+#include <bitset>
 
 // Define the MyClass class
 class NumsManagment
 {
 public:
 
-    std::string file_name;
 
     // Constructor
-    NumsManagment();
+    NumsManagment(std::string& file_name);
 
     // Destructor
     ~NumsManagment();
+
+
+    /**
+     * @brief 
+     * The function yields the next 
+     * @return std::generator<bitset> 
+     */
+    std::generator<bitset> read_from_file_gen();
+
+
+private:
 
     /**
      * @brief 
@@ -25,10 +37,7 @@ public:
      */
     bool is_line_pos_int(const std::string& st);
 
-
-// private:
-//     // Private member variable to store the name of the object
-//     std::string m_name;
+    std::string file_name;
 };
 
 #endif // Nums_Managment_H
