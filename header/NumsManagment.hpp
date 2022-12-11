@@ -21,10 +21,12 @@ public:
 
     /**
      * @brief 
-     * The function yields the next 
-     * @return std::generator<bitset> 
+     * The function yields the next valid number n the file
+     * @return std::generator<bitset> representation of the file
      */
     std::generator<bitset> read_from_file_gen();
+
+    Stack<bitset> stack_from_file();
 
 
 private:
