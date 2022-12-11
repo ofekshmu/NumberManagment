@@ -1,0 +1,34 @@
+#ifndef Nums_Managment_H
+#define Nums_Managment_H
+
+// Include any necessary standard or third-party libraries
+#include <string>
+
+// Define the MyClass class
+class NumsManagment
+{
+public:
+
+    std::string file_name;
+
+    // Constructor
+    NumsManagment();
+
+    // Destructor
+    ~NumsManagment();
+
+    /**
+     * @brief 
+     * Checks if st - a line in the file, represents a positive integer
+     * @param st 
+     * @return True is @param st represent a positive integer and falase otherwise. 
+     */
+    bool is_line_pos_int(const std::string& st);
+
+
+// private:
+//     // Private member variable to store the name of the object
+//     std::string m_name;
+};
+
+#endif // Nums_Managment_H
