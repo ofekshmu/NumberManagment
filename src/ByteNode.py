@@ -20,4 +20,5 @@ class ByteNode:
         return self.next
 
     def __repr__(self) -> str:
-        return f"[byte]=>{self.byte}"
+        """ Describe Byte node using this string [byte]=> """
+        return f"[{self.byte}]=>"
