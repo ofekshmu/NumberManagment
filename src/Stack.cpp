@@ -1,45 +1,55 @@
-#include "Stack.h"
+#include "Stack.hpp"
 #include <sstream>
 #include <iostream>
+#include <string>
 
-Stack::Stack<bitset>():
+
+template <typename T>
+Stack<T>::Stack()
 {
-    this->
+    // Do i need to initialize the vector?
 }
 
-Stack::~Stack()
+template <typename T>
+Stack<T>::~Stack()
 {
-    // No specific actions are required for the destructor
+    // No specific actions are required for the destructor?
+    // is this even needed?
 }
 
-
-void push(bitset element)
+template <typename T>
+void Stack<T>::push(T element)
 {
     elements.push_back(element);
 }
 
-bitset pop()
+template <typename T>
+T Stack<T>::pop()
 {
     return elements.pop_back();
 }
 
-bitset top()
+template <typename T>
+T Stack<T>::top()
 {
     return elements.back();
 }
 
-int len()
+template <typename T>
+int Stack<T>::len()
 {
     // Might need to return a size_t here
     return elements.size();
 }
 
-bool is_empty()
+template <typename T>
+bool Stack<T>::is_empty()
 {
     return elements.empty();
 }
 
-std::string repr()
+template <typename T>
+std::string Stack<T>::repr()
 {
     std::stringstream ss;
     ss << "Stack (size = " << elements.size() << "): [";
