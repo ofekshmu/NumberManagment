@@ -3,7 +3,6 @@
 
 // Include any necessary standard or third-party libraries
 #include <string>
-#include <generator>
 #include <bitset>
 
 // Define the MyClass class
@@ -22,17 +21,9 @@ public:
     /**
      * @brief 
      * The function yields the next valid number n the file
-     * @return std::generator<bitset> representation of the file
+     * @return 
      */
-    std::generator<bitset> read_from_file_gen();
-
-    /**
-     * @brief 
-     * 
-     * @return Stack<bitset> 
-     */
-    Stack<bitset> stack_from_file();
-
+    bitset read_from_file_gen();
 
 private:
 

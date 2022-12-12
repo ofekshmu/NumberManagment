@@ -1,4 +1,4 @@
-#include "NumsManagment.h"
+#include "NumsManagment.hpp"
 #include <string>
 #include <fstream>
 #include <iostream>
@@ -50,5 +50,4 @@ std::generator<bitset> read_from_file_gen()
             yield binary_number(std::stoi(line))
     }
     throw std::ios_base::failure("Error: No more lines to read!");
-
 }
