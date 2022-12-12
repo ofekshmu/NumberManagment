@@ -1,7 +1,7 @@
 #ifndef Stack_H
 #define Stack_H
 
-#include <string>
+#include <vector>
 
 template <typename T>
 class Stack
@@ -25,8 +25,8 @@ class Stack
         std::string repr();
 
     private:
-
-    // add variables
+    // A vector to store the elements of the stack
+    std::vector<T> elements;
 }
 
 #endif // Stack_H
