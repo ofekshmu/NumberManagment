@@ -18,3 +18,6 @@ class ByteNode:
     def get_next(self) -> Union[None, ByteNode]:
         """ get the next field """
         return self.next
+
+    def __repr__(self) -> str:
+        return f"[byte]=>{self.byte}"

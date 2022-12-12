@@ -23,3 +23,5 @@ makefile
 # Ignore Visual Studio files
 *.vcxproj
 *.sln
+
+*.json
