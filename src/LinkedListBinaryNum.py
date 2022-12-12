@@ -26,3 +26,29 @@ class LinkedListBinaryNum:
             bn = bn.next
         lst_repr += "None"
         return f"LinkedListBinaryNum with {self.size}, Bytes map: {lst_repr}" 
+
+    def __str__(self):
+        """ """
+        pass
+    
+    def __len__(self):
+        """ """
+        pass
+
+    def __getitem__(self, item):
+        """ """
+        pass
+
+    def __add__(self, other):
+        """ """
+        pass
+
+    def __radd__(self, other):
+        """ """
+        pass
+
+    def __sub__(self, other):
+        """ """
+        pass
+    
+        
