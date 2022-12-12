@@ -4,7 +4,7 @@
 
 Stack::Stack<bitset>():
 {
-    // Initialize some structure
+    this->
 }
 
 Stack::~Stack()

@@ -26,6 +26,11 @@ public:
      */
     std::generator<bitset> read_from_file_gen();
 
+    /**
+     * @brief 
+     * 
+     * @return Stack<bitset> 
+     */
     Stack<bitset> stack_from_file();
 
 
