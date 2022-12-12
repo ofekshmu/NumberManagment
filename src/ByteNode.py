@@ -1,4 +1,5 @@
-from typing import Union, Type
+from typing import Union
+from ByteNode import ByteNode # Could be a problem
 
 class ByteNode:
 
@@ -15,8 +16,12 @@ class ByteNode:
         """ get the byte field """
         return self.byte
 
-    def get_next(self) -> Union[None, ByteNode]:
-        """ get the next field """
+    def set_next(self, next: ByteNode) -> None:
+        """ set the next field """
+        self.next = next
+    
+    def get_next(self) -> Union[ByteNode, None]:
+        """ get the next field  """
         return self.next
 
     def __repr__(self) -> str:
