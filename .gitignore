@@ -25,3 +25,5 @@ makefile
 *.sln
 
 *.json
+documents
+__pycache__

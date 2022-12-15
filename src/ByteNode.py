@@ -1,12 +1,11 @@
 from typing import Union
-from ByteNode import ByteNode # Could be a problem
 
 class ByteNode:
 
     def __init__(self, byte: str):
         """ Constructor function """
         if not isinstance(byte, str):
-            raise TypeError("input argument 'byte' is not op type string!")
+            raise TypeError("input argument 'byte' is not of type string!")
         if len(byte) != 8:
             raise ValueError("input strin 'byte' is not of length 8!")
         self.byte = byte
@@ -16,11 +15,11 @@ class ByteNode:
         """ get the byte field """
         return self.byte
 
-    def set_next(self, next: ByteNode) -> None:
+    def set_next(self, next: "ByteNode") -> None:
         """ set the next field """
         self.next = next
     
-    def get_next(self) -> Union[ByteNode, None]:
+    def get_next(self) -> Union["ByteNode", None]:
         """ get the next field  """
         return self.next
 

@@ -10,8 +10,28 @@ class LinkedListBinaryNum:
         if num < 0:
             raise ValueError("num is not positive!")
 
-        self.head = "?"
-        self.size = "?"
+        BYTE_SIZE = 8
+        if num == 0:
+            binary_padded = BYTE_SIZE*"0"
+        else:
+            binary_rep = bin(num)[2:]
+            padding_size = (BYTE_SIZE - (len(binary_rep) % BYTE_SIZE)) % BYTE_SIZE
+            binary_padded = padding_size*"0" + binary_rep
+
+        msb_byte = binary_padded[:8]
+        self.head = ByteNode(msb_byte)
+        curr_node = self.head
+        
+        iter_count = len(binary_padded) // BYTE_SIZE - 1 
+        for i in range(iter_count):
+            byte = binary_padded[(i + 1)*BYTE_SIZE: (i + 1)*BYTE_SIZE + BYTE_SIZE]
+            node = ByteNode(byte)
+            curr_node.next = node
+            curr_node = node
+        
+        curr_node.next = None
+
+        self.size = len(binary_padded) // BYTE_SIZE
 
     def add_MSB(self, byte: str) -> None:
         """ Add an MSB ByteNode to the list """
@@ -25,7 +45,12 @@ class LinkedListBinaryNum:
             lst_repr += bn.__repr__()
             bn = bn.next
         lst_repr += "None"
-        return f"LinkedListBinaryNum with {self.size}, Bytes map: {lst_repr}" 
+        
+        s = ''
+        if self.size > 1:
+            s = 's'
+
+        return f"LinkedListBinaryNum with {self.size} Byte{s}, Bytes map: {lst_repr}" 
 
     def __str__(self):
         """ """
