@@ -35,7 +35,10 @@ class LinkedListBinaryNum:
 
     def add_MSB(self, byte: str) -> None:
         """ Add an MSB ByteNode to the list """
-        pass
+        second_node = self.head
+        self.head = ByteNode(byte)
+        self.head.next = second_node
+
 
     def __repr__(self) -> str:
         """ return an str desribing the byte list """
@@ -54,15 +57,33 @@ class LinkedListBinaryNum:
 
     def __str__(self):
         """ """
-        pass
+        st = ""
+        pos = self.head
+
+        while pos is not None:
+            st += f"|{pos.byte}"
+            pos = pos.next
+        
+        return st + "|"
     
     def __len__(self):
         """ """
-        pass
+        return self.size
 
     def __getitem__(self, item):
         """ """
-        pass
+        if item >= self.size or item <= -self.size - 1:
+            raise IndexError(f"Bad index!")
+
+        if item < 0:
+            item = item + self.size
+
+        pos = self.head
+        for i in range(item):
+            pos = pos.next
+        
+        return pos.byte
+
 
     def __add__(self, other):
         """ """
