@@ -37,7 +37,7 @@ def test_add_msb():
         byte =  ''.join(random.choices(['0', '1'], k=8))
         bn1.add_MSB(byte)
         st = f"[{byte}]=>" + st
-        assert bn1.__repr__() == f"LinkedListBinaryNum with 1 Byte, Bytes map: {st}[00000000]=>None"
+        assert bn1.__repr__() == f"LinkedListBinaryNum with {i+2} Bytes, Bytes map: {st}[00000000]=>None"
 
 
 def test_str_func():

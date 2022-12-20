@@ -38,6 +38,7 @@ class LinkedListBinaryNum:
         second_node = self.head
         self.head = ByteNode(byte)
         self.head.next = second_node
+        self.size += 1
 
 
     def __repr__(self) -> str:
