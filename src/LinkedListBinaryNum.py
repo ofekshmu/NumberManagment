@@ -96,13 +96,41 @@ class LinkedListBinaryNum:
         pos1 = self.head
         pos2 = other.head
         while pos1 != None:
-            for i in range(8):
-                if pos1.byte[i] != pos2.byte[i]:
-                    return False
+            if pos1.byte != pos2.byte:
+                return False
             pos1 = pos1.next
             pos2 = pos2.next
 
         return True
+
+    def __ne__(self, other):
+        if not isinstance(other, LinkedListBinaryNum):
+            raise TypeError("This is not a type LinkedListBinaryNum")
+
+        if other.size != self.size:
+            return True
+        
+        pos1 = self.head
+        pos2 = other.head
+        while pos1 != None:
+            if pos1.byte != pos2.byte:
+                return True
+            pos1 = pos1.next
+            pos2 = pos2.next
+
+        return False
+
+    def __lt__(self, other):
+        pass
+
+    def __le__(self, other):
+        pass
+
+    def __gt__(self, other):
+        pass
+
+    def __ge__(self, other):
+        pass
 
     def __add__(self, other):
         """ """
