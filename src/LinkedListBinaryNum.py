@@ -85,6 +85,24 @@ class LinkedListBinaryNum:
         
         return pos.byte
 
+    def __eq__(self, other):
+        
+        if not isinstance(other, LinkedListBinaryNum):
+            raise TypeError("This is not a type LinkedListBinaryNum")
+
+        if other.size != self.size:
+            return False
+        
+        pos1 = self.head
+        pos2 = other.head
+        while pos1 != None:
+            for i in range(8):
+                if pos1.byte[i] != pos2.byte[i]:
+                    return False
+            pos1 = pos1.next
+            pos2 = pos2.next
+
+        return True
 
     def __add__(self, other):
         """ """
